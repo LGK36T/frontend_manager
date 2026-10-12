@@ -1,52 +1,53 @@
-# Frontend Manager (AI Agent Skill)
+# Frontend Manager
 
-Skill especializada para guiar a los agentes de Inteligencia Artificial al diseñar, codificar, refactorizar y verificar aplicaciones frontend, componentes de interfaz y experiencia de usuario (UI/UX).
-
----
-
-## 📌 ¿Qué es este Skill?
-
-**Frontend Manager** provee un conjunto riguroso de directrices para que los agentes de IA (como Antigravity, Claude Code, Cursor, Copilot, etc.) construyan interfaces de usuario accesibles, responsivas, modulares y optimizadas para producción.
-
-La especificación completa del comportamiento del agente se encuentra en [SKILL.md](file:///home/LGK36T/workspace/skills/frontend_manager/SKILL.md).
+Skill de desarrollo frontend para agentes de IA y desarrolladores. Define estándares de arquitectura por capas, convenciones de código y plantillas para aplicaciones basadas en Next.js 15+, React 19, TypeScript, Zustand 5, Axios y Tailwind CSS.
 
 ---
 
-## 🎯 Directrices que impone a la IA
+## Arquitectura y Principios
 
-- **Componentes Atómicos:** Responsabilidad única, reutilización y desacoplamiento de la lógica en custom hooks.
-- **Accesibilidad Obligatoria (a11y):** HTML5 semántico, compatibilidad con lectores de pantalla y navegación completa por teclado.
-- **Diseño Mobile-First:** Enfoque prioritario en dispositivos móviles y layouts fluidos sin desbordamientos horizontales.
-- **Estados de Interfaz Defensivos:** Renderizado explícito de estados inicial, carga (skeletons), éxito y error con reintento.
-- **Rendimiento Cliente:** Code-splitting por ruta, optimización de assets y prevención de renderizados innecesarios.
+- **Separación por capas:** Flujo unidireccional `Page` -> `Functional Component` -> `Hook` -> `Zustand Store` -> `Service` -> `API Gateway`.
+- **Next.js 15+ y React 19:** Parámetros de ruta asíncronos (`await params`), delimitación clara de Server y Client Components (`'use client'`), y estado global con Zustand 5.
+- **Tokens de diseño:** Consumo de variables semánticas desde `globals.css` en lugar de clases de color arbitrarias.
+- **Manejo de estados de UI:** Gestión explícita de carga, error con reintento, éxito y estados vacíos.
+- **Seguridad:** Variables de entorno centralizadas y decodificación de tokens en cliente con `jwt-decode`.
 
 ---
 
-## 📂 Contenido del Repositorio
+## Estructura del Repositorio
 
 ```text
 frontend_manager/
-├── SKILL.md             # Instrucciones principales para el agente de IA
-├── CHANGELOG.md         # Historial de cambios del skill
-├── LICENSE              # Licencia de código abierto (MIT)
-├── README.md            # Documentación y descripción del skill
-└── .gitignore           # Exclusiones de control de versiones
+├── SKILL.md                          # Instrucciones y flujo de trabajo principal
+├── references/                       # Documentación técnica de referencia
+│   ├── technical-architecture.md     # Especificación técnica detallada
+│   └── globals-and-styling.md        # Tokens CSS, globals.css y Tailwind
+├── resources/
+│   └── templates/                    # Plantillas de código reutilizables
+│       ├── store.template.ts         # Store de Zustand
+│       ├── service.template.ts       # Servicio HTTP con Axios
+│       ├── hook.template.ts          # Custom Hook selector
+│       ├── functional.template.tsx   # Componente funcional
+│       └── page.template.tsx         # Página de App Router
+├── CHANGELOG.md                      # Historial de cambios
+├── LICENSE                           # Licencia MIT
+└── README.md                         # Este documento
 ```
 
 ---
 
-## 🚀 Uso e Integración
+## Instalación y Uso
 
-### En Google Antigravity / Asistentes IA
-Coloca este repositorio dentro del directorio de skills de tu espacio de trabajo:
+Colocar este directorio dentro de la ruta de skills del entorno de trabajo:
+
 ```bash
 .agents/skills/frontend_manager/
-# o ~/.gemini/antigravity-cli/skills/frontend_manager/
 ```
-El agente descubrirá automáticamente el archivo `SKILL.md` y aplicará estas directrices cuando trabaje con vistas, componentes y estilos frontend.
+
+Para consultar el flujo de trabajo completo, ver [SKILL.md](./SKILL.md).
 
 ---
 
-## 📄 Licencia
+## Licencia
 
-Este proyecto está bajo la licencia [MIT](file:///home/LGK36T/workspace/skills/frontend_manager/LICENSE).
+[MIT](./LICENSE)
