@@ -148,29 +148,29 @@ export default config
 
 ### A. Para Botones e Interactivos
 ```tsx
-// Correcto ✅
+// Válido (token semántico)
 className="bg-primary text-primary-foreground hover:bg-primary-hover"
 className="bg-secondary text-secondary-foreground hover:bg-muted"
 
-// Incorrecto ❌
+// No recomendado (color hardcodeado)
 className="bg-blue-600 text-white hover:bg-blue-700"
 className="bg-gray-100 text-black hover:bg-gray-200"
 ```
 
 ### B. Para Bordes y Contenedores
 ```tsx
-// Correcto ✅
+// Válido (token semántico)
 className="border border-border bg-background rounded-lg text-foreground"
 
-// Incorrecto ❌
+// No recomendado (color hardcodeado)
 className="border border-gray-200 bg-white rounded-md text-gray-900"
 ```
 
 ### C. Para Inputs y Formularios
 ```tsx
-// Correcto ✅
+// Válido (token semántico)
 className="border border-input bg-background focus:ring-2 focus:ring-ring text-foreground"
 
-// Incorrecto ❌
+// No recomendado (color hardcodeado)
 className="border border-gray-300 bg-white focus:ring-blue-500 text-black"
 ```

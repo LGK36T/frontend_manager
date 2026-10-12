@@ -153,8 +153,8 @@ NEXT_PUBLIC_API_URL=http://localhost:3001/api/v1
 
 > **REGLAS DE SEGURIDAD:**
 > 1. Solo las variables requeridas en el browser llevan prefijo `NEXT_PUBLIC_`.
-> 2. Claves secretas de backend o API keys privadas **NUNCA** deben llevar `NEXT_PUBLIC_`.
-> 3. Mantener `.env.example` en el repositorio sin valores reales como documentación viviente.
+> 2. Claves secretas de backend o API keys privadas no deben llevar `NEXT_PUBLIC_`.
+> 3. Mantener `.env.example` en el repositorio sin valores reales como referencia.
 
 ---
 
