@@ -1,87 +1,52 @@
-# Frontend Manager
+# Frontend Manager (AI Agent Skill)
 
-Módulo responsable de la arquitectura, diseño de componentes, gestión de estado y experiencia de usuario (UI/UX) para las aplicaciones cliente del sistema.
-
----
-
-## 📌 Descripción General
-
-**Frontend Manager** establece las bases para el desarrollo de interfaces de usuario modernas, responsivas y accesibles. Proporciona una estructura unificada para la gestión de vistas, componentes reutilizables, consumo seguro de APIs proporcionadas por `backend_manager` y optimización de rendimiento en el cliente.
+Skill especializada para guiar a los agentes de Inteligencia Artificial al diseñar, codificar, refactorizar y verificar aplicaciones frontend, componentes de interfaz y experiencia de usuario (UI/UX).
 
 ---
 
-## 🎯 Objetivos y Responsabilidades
+## 📌 ¿Qué es este Skill?
 
-- **Diseño de Interfaz y UI Kit:** Creación de componentes reutilizables, consistentes y basados en el sistema de diseño.
-- **Gestión de Estado:** Manejo predecible del estado global y local de la aplicación.
-- **Enrutamiento y Navegación:** Definición de rutas protegidas, layout dinámico y transiciones fluidas.
-- **Consumo de APIs y Manejo de Errores:** Integración tipada y resiliente con los endpoints del backend.
-- **Rendimiento y Accesibilidad:** Optimización de carga inicial, code-splitting, SEO y cumplimiento de estándares WCAG.
+**Frontend Manager** provee un conjunto riguroso de directrices para que los agentes de IA (como Antigravity, Claude Code, Cursor, Copilot, etc.) construyan interfaces de usuario accesibles, responsivas, modulares y optimizadas para producción.
+
+La especificación completa del comportamiento del agente se encuentra en [SKILL.md](file:///home/LGK36T/workspace/skills/frontend_manager/SKILL.md).
 
 ---
 
-## 📂 Estructura del Proyecto
+## 🎯 Directrices que impone a la IA
+
+- **Componentes Atómicos:** Responsabilidad única, reutilización y desacoplamiento de la lógica en custom hooks.
+- **Accesibilidad Obligatoria (a11y):** HTML5 semántico, compatibilidad con lectores de pantalla y navegación completa por teclado.
+- **Diseño Mobile-First:** Enfoque prioritario en dispositivos móviles y layouts fluidos sin desbordamientos horizontales.
+- **Estados de Interfaz Defensivos:** Renderizado explícito de estados inicial, carga (skeletons), éxito y error con reintento.
+- **Rendimiento Cliente:** Code-splitting por ruta, optimización de assets y prevención de renderizados innecesarios.
+
+---
+
+## 📂 Contenido del Repositorio
 
 ```text
 frontend_manager/
-├── public/              # Archivos estáticos y favicon
-├── src/
-│   ├── assets/          # Imágenes, tipografías e íconos
-│   ├── components/      # Componentes UI reutilizables
-│   ├── context/         # Proveedores de contexto / Estado global
-│   ├── hooks/           # Custom hooks o utilidades reactivas
-│   ├── layouts/         # Estructuras maestras de página
-│   ├── pages/           # Vistas principales de la aplicación
-│   ├── services/        # Clientes HTTP y llamadas a API
-│   ├── styles/          # Hojas de estilo globales y variables
-│   └── utils/           # Helpers y formateadores
-├── tests/               # Pruebas unitarias y de componentes
-├── .gitignore           # Exclusiones de control de versiones
-├── CHANGELOG.md         # Historial de versiones y cambios
-└── README.md            # Documentación general del módulo
+├── SKILL.md             # Instrucciones principales para el agente de IA
+├── CHANGELOG.md         # Historial de cambios del skill
+├── LICENSE              # Licencia de código abierto (MIT)
+├── README.md            # Documentación y descripción del skill
+└── .gitignore           # Exclusiones de control de versiones
 ```
 
 ---
 
-## 🚀 Inicio Rápido
+## 🚀 Uso e Integración
 
-### Requisitos Previos
-
-- Node.js (versión LTS recomendada) o entorno frontend equivalente.
-- Gestor de paquetes (`npm`, `pnpm` o `yarn`).
-
-### Configuración
-
-1. Clonar el repositorio:
-   ```bash
-   git clone <URL_DEL_REPOSITORIO>/frontend_manager.git
-   cd frontend_manager
-   ```
-
-2. Instalar dependencias:
-   ```bash
-   npm install
-   ```
-
-3. Iniciar el servidor de desarrollo:
-   ```bash
-   npm run dev
-   ```
-
----
-
-## 🔄 Flujo de Trabajo con Git
-
-1. Crear una rama de funcionalidad siguiendo la convención:
-   ```bash
-   git checkout -b feature/nuevo-componente
-   ```
-2. Realizar commits atómicos y descriptivos.
-3. Actualizar el archivo [CHANGELOG.md](file:///home/LGK36T/workspace/skills/frontend_manager/CHANGELOG.md) con las novedades.
-4. Enviar un Pull Request / Merge Request.
+### En Google Antigravity / Asistentes IA
+Coloca este repositorio dentro del directorio de skills de tu espacio de trabajo:
+```bash
+.agents/skills/frontend_manager/
+# o ~/.gemini/antigravity-cli/skills/frontend_manager/
+```
+El agente descubrirá automáticamente el archivo `SKILL.md` y aplicará estas directrices cuando trabaje con vistas, componentes y estilos frontend.
 
 ---
 
 ## 📄 Licencia
 
-Este proyecto está bajo los términos y directrices definidos por el equipo de desarrollo.
+Este proyecto está bajo la licencia [MIT](file:///home/LGK36T/workspace/skills/frontend_manager/LICENSE).
